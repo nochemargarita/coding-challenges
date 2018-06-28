@@ -24,19 +24,21 @@ def is_anagram(str1, str2):
     if len(str1) != len(str2):
         return False
 
-    result = {}
-    for char in str1:
-        if char not in result:
+    result = {}  # O(n) space
+    for char in str1:  # O(n) time
+        if char not in result:  # O(1) time
             result[char] = 1
         else:
             result[char] += 1
 
-    for char in str2:
-        if char in result:
+    for char in str2:  # O(n) time
+        if char in result:  # O(1) time
             result[char] -= 1
             if result[char] == 0:
                 del result[char]
 
-    return result is not None
+    return len(result) == 0
 
 print is_anagram('mom', 'omm')
+print is_anagram('jam', 'jom')
+print is_anagram('racecar', 'arcearc')
