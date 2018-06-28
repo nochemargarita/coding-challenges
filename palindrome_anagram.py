@@ -18,3 +18,25 @@ def is_palindrome(string):
 # print is_palindrome("")
 
 
+def is_anagram(str1, str2):
+    """Returns a boolean whether a string 1 is anagram or not of string 2."""
+
+    if len(str1) != len(str2):
+        return False
+
+    result = {}
+    for char in str1:
+        if char not in result:
+            result[char] = 1
+        else:
+            result[char] += 1
+
+    for char in str2:
+        if char in result:
+            result[char] -= 1
+            if result[char] == 0:
+                del result[char]
+
+    return result is not None
+
+print is_anagram('mom', 'omm')
