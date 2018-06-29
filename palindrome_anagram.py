@@ -1,12 +1,7 @@
 def is_palindrome(string):
     """Returns a boolean whether a str is a palindrome or not."""
 
-    boolean = False
-    for i in range(len(string)/2):
-        if string[i] == string[-(i + 1)]:
-            boolean = True
-
-    return boolean
+    return string[len(string)::-1] == string
 
 
 # print is_palindrome("racecar")
