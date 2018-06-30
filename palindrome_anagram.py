@@ -1,14 +1,14 @@
 def is_palindrome(string):
     """Returns a boolean whether a str is a palindrome or not."""
 
-    return string[len(string)::-1] == string
+    return string[::-1] == string
 
 
 # print is_palindrome("racecar")
 # print is_palindrome("hello")
 # print is_palindrome("car")
 # print is_palindrome("braces")
-# print is_palindrome("mom")
+# print is_palindrome("mom mom")
 # print is_palindrome("anna")
 # print is_palindrome("")
 
