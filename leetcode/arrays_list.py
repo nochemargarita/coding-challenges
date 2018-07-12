@@ -4,6 +4,14 @@ def firstDuplicate(a):
     >>> firstDuplicate([2, 1, 3, 5, 3, 2])
     3
 
+    >>> firstDuplicate([2, 1])
+    -1
+
+    >>> firstDuplicate([])
+    -1
+
+    >>> firstDuplicate([8, 4, 6, 2, 6, 4, 7, 9, 5, 8])
+    6
     """
     
     duplicate = -1
@@ -16,17 +24,3 @@ def firstDuplicate(a):
     # Its O(n^2) time and O(1) space
     # I think there will still be a better solution, O(n) time and O(1) space
     return duplicate
-
-# a = [2, 1, 3, 5, 3, 2]
-
-# a = [2, 4, 3, 5, 1]
-
-# a = [2, 2]
-
-# a = [2, 1]
-
-# a = [2, 1, 3]
-
-# a = [8, 4, 6, 2, 6, 4, 7, 9, 5, 8]
-
-# a = []
