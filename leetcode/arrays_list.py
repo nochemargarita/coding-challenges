@@ -54,20 +54,31 @@ def firstNotRepeatingCharacter(s):
 
     """
     # must be O(1) space and O(n) run time
-    no_repeating_char = '_'
+    
 
-    if not s:
-        return no_repeating_char
-    elif len(s) == 1:
-        return s
-    else:
-        for i in xrange(len(s)):
-            if s[i] not in set(s[i + 1:]) and s[i] not in set(s[:i]):
-                return s[i]
-        else:
-            return no_repeating_char
+    # if not s:
+    #     return '_'
+    # elif len(s) == 1:
+    #     return s
+    # else:
+    #     for i in xrange(len(s)):
+    #         if s[i] not in set(s[i + 1:]) and s[i] not in set(s[:i]):
+    #             return s[i]
+  
+    #     return '_'
 
-# print firstNotRepeatingCharacter("abacabad")
+    for char in s:
+        if s.index(char) == s.rindex(char):
+            return char
+
+    # need to find out runtime.
+    return '_'
+
+
+
+
+
+print firstNotRepeatingCharacter("abacabad")
 # print firstNotRepeatingCharacter("abacabadabacabad")
 # print firstNotRepeatingCharacter("z")
 # print firstNotRepeatingCharacter("")
