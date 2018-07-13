@@ -62,7 +62,7 @@ def firstNotRepeatingCharacter(s):
         return s
     else:
         for i in xrange(len(s)):
-            if s[i] not in s[i + 1:] and s[i] not in s[:i]:
+            if s[i] not in set(s[i + 1:]) and s[i] not in set(s[:i]):
                 return s[i]
         else:
             return no_repeating_char
