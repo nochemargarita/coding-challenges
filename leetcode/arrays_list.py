@@ -68,17 +68,37 @@ def firstNotRepeatingCharacter(s):
     #     return '_'
 
     for char in s:
-        if s.index(char) == s.rindex(char):
+        if s.index(char) == s.rindex(char): 
             return char
 
     # need to find out runtime.
+    # run time is o(n^2) so it's still not good. just space efficient
     return '_'
 
-
-
-
-
-print firstNotRepeatingCharacter("abacabad")
+# print firstNotRepeatingCharacter("abacabad")
 # print firstNotRepeatingCharacter("abacabadabacabad")
 # print firstNotRepeatingCharacter("z")
 # print firstNotRepeatingCharacter("")
+
+def rotateImage(a):
+    """returns a new list of numbers that are rotated.
+
+    >>> rotateImage([[1,2,3], [4,5,6], [7,8,9]])
+    [[7,4,1], [8,5,2], [9,6,3]]
+
+
+    >>> [[10,9,6,3,7], [6,10,2,9,7], [7,6,3,8,2], [8,9,7,9,9], [6,8,6,8,2]]
+    [[6,8,7,6,10], [8,9,6,10,9], [6,7,3,2,6], [8,9,8,9,3], [2,9,2,7,7]]
+
+    >>> [[1]]
+    [[1]]
+
+    """
+    # try solving in place with O(1) additional memory
+    
+    visited = None
+
+    for i in xrange(len(a) / 2):
+        for inner in xrange(len(i) / 2):
+            pass
+
