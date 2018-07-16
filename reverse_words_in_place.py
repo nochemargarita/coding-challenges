@@ -21,7 +21,7 @@ def reverse_words(reversed_chars):
     for i in xrange(len(reversed_chars) + 1):
     
         if (i == len(message)) or (message[i] == ' '):
-            reverse_characters(message, current_word_start_index, i - 1)
+            reverse_each_char(message, current_word_index, i - 1)
             current_word_start_index = i + 1
 
     return reversed_characters

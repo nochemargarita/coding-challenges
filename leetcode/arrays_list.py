@@ -95,10 +95,10 @@ def rotateImage(a):
 
     """
     # try solving in place with O(1) additional memory
-    
+
     visited = None
 
-    for i in xrange(len(a) / 2):
-        for inner in xrange(len(i) / 2):
+    for i in xrange(len(a)):
+        for j in xrange(len(a)):
             pass
 
