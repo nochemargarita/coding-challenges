@@ -30,27 +30,44 @@ def with_and_without_parents(pairs):
 
     without_parent = []
     with_one_parent = []
-    counter_dictionary = {}
+    with_parent_counter = {}
+    without_parent_counter = {}
 
     for i in xrange(len(pairs)):
-        if pairs[i][1] not in counter_dictionary:
-            counter_dictionary[pairs[i][1]] = 1
+        if pairs[i][1] not in with_parent_counter:
+            with_parent_counter[pairs[i][1]] = 1
         else:
-            counter_dictionary[pairs[i][1]] += 1
+            with_parent_counter[pairs[i][1]] += 1
 
-        
-    for item, count in counter_dictionary.iteritems():
+    for item, count in with_parent_counter.iteritems():
         if count == 1:
-          with_one_parent.append(item)
+            with_one_parent.append(item)
 
-    return with_one_parent
 
+    for i in pairs:
+        for j in pairs:
+            if i[0] != j[1]:
+                if i[0] not in without_parent_counter:
+                    without_parent_counter[i[0]] = 1
+                else:
+                    without_parent_counter[i[0]] += 1
+        
+
+    for item, count in without_parent_counter.iteritems():
+        if count == len(pairs) or count == (len(pairs) * 2):
+            without_parent.append(item)
+
+    
+
+    return [without_parent, with_one_parent]
 
 
 parent_child_pairs = [
-                      [1, 3], [2, 3], [3, 6], [5, 6],
-                      [5, 7], [4, 5], [4, 8], [8, 9]
-                     ]
+                     [1, 3], [2, 3], [3, 6], [5, 6],
+                     [5, 7], [4, 5], [4, 8], [8, 9]]
 
 
-print with_and_without_parents(parent_child_pairs)                    
+print with_and_without_parents(parent_child_pairs)
+
+
+
