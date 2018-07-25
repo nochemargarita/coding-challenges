@@ -12,4 +12,17 @@ def has_unique_chars(word):
 
     """
 
-    return len(word) == len(set(word))  # O(n) space
+    # Solution 1
+    # return len(word) == len(set(word))  # O(n) space
+
+    # Solution 2
+    unique_dic = {}
+
+    for char in word:
+        if char in unique_dic:
+            return False
+        else:
+            unique_dic[char] = 1
+
+    return True
+
