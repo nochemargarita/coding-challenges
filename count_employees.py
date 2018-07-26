@@ -67,6 +67,27 @@ class Node(object):
                 to_visit.append(child)
         return counter
 
+    def count_employees_nonrecursive(self):
+        """Return a count of how many employees this person manages.
+
+        Return a count of how many people that manager manages. This should
+        include *everyone* under them, not just people who directly report to
+        them.
+
+        Non-recursive version.
+        """
+
+        # Using a loop, also a fine way to solve this, although it's
+        # probably a little trickier and less elegant than the
+        # recursive version
+        counter = 0
+        for child in self.children:
+            counter += 1 + child.count_employees_nonrecursive()
+
+        return counter
+
+
+
 
 if __name__ == '__main__':
     import doctest
