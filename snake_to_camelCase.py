@@ -7,13 +7,39 @@ def snake_to_camel(variable_name):
     >>> snake_to_camel("snake_to_camel")
     'snakeToCamel'
 
+
+    >>> snake_to_camel('a')
+    'a'
+
+    >>> snake_to_camel('ab')
+    'ab'
+
+    >>> snake_to_camel('a_b')
+    'aB'
+
+    >>> snake_to_camel('')
+    ''
+
     """
 
     result = ''
+    index = 0
+    if not variable_name:
+        return result
+    
+    while len(variable_name) >= index:
+        current_indx = index
+        index = variable_name.find('_', index)
 
-    skip_index = variable_name.find('_')
-    first_word = variable_name[:skip_index]
-    second_word = variable_name[skip_index+1:].capitalize()
+        if index != -1:
+            result += variable_name[current_indx:index].capitalize()
 
-    result += first_word + second_word
-    return result
+            index += len('-')
+
+        else:
+            result += variable_name[current_indx:].capitalize()
+            break
+
+    return result[0].lower() + result[1:]
+
+    

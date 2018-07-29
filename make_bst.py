@@ -139,16 +139,17 @@ def make_bst(nums):
 
     Returns the root node of a new BST that is valid and balanced.
     """
-    if not nums:
-        return None
+    if nums:
 
-    mid_index = len(nums) / 2
-    node = BinaryNode(nums[mid_index])
+        mid_index = len(nums) / 2
+        node = BinaryNode(nums[mid_index])
 
-    node.left = nums[:node - 1]
-    node.right = nums[node:]
+        node.left = BinaryNode(nums[:node - 1])
+        node.right = BinaryNode(nums[node:])
 
-    return node
+        return node
+
+    return None
 
 
 if __name__ == '__main__':
