@@ -114,8 +114,8 @@ class BinaryNode(object):
         right = []
 
         while curr_l.left:
-            left.append(curr_l.data)
-            curr_l = curr_l.left
+          left.append(curr_l.data)
+          curr_l = curr_l.left
         
         while curr_r.right:
           right.append(curr_r.data)
