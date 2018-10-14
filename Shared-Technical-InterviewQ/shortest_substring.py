@@ -1,0 +1,1 @@
+def shortest_substring(string, alphabet)
