@@ -24,6 +24,13 @@ zero for both numbers, and they sum to zero:
 def add_to_zero(nums):
     """Given list of ints, return True if any two nums sum to 0."""
 
+    nums_set = set(nums)
+    for num in nums:
+        if -num in nums_set:
+            return True
+
+    return False
+
 
 if __name__ == '__main__':
     import doctest

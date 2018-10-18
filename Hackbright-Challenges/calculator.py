@@ -14,9 +14,13 @@ def calc(s):
     >>> calc("/ 6 - 4 2")  # 6 / (4 - 2)
     3
     """
-    expression = set(['+', '-', '/', '*'])
-    calculate = s[1]+s[0]
+    operators = {'+', '-', '/', '*'}
     
-    for i in ''.join(s):
-        if i 
+    operator_stack = []
+
+    for i in xrange(1, len(s) + 1):
+        print s[-i]
+
+
+print calc("* 2 + 1 2")
         

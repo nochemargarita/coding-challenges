@@ -2,25 +2,7 @@ import unittest
 
 
 def sum_100(nums_list):
-    result = []  # O(n) space
-
-    if nums_list == []:
-        return result
-
-    else:
-        current = nums_list.pop()  # O(1) time and space complexity
-        while nums_list != []:  # O(n) time
-            for num in nums_list:  # O(n) time
-                if (num + current) == 100:
-                    result.append([num, current])  # O(1) time
-                    nums_list.remove(num)  # O(n) time
-                    break
-
-            if nums_list != []:
-                current = nums_list.pop()  # O(n) time
-
-    return result
-
+    pass
 
 class Test(unittest.TestCase):
 
