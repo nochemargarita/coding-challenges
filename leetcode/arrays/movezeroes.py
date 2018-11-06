@@ -7,12 +7,12 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         indx = 0
-        curr = 0
+        current = 0
         while indx < len(nums):
-            if nums[curr] == 0:
-                nums.append(nums.pop(curr))
+            if nums[current] == 0:
+                nums.append(nums.pop(current))
             else:
-                curr += 1
+                current += 1
             
             indx += 1
 
