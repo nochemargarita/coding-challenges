@@ -54,7 +54,7 @@ class Test(unittest.TestCase):
 
         self.assertEqual(actual, expected)
 
-    def test_two_sum_(self):
+    def test_two_sum_4(self):
         actual = Solution().twoSum([1], 5)
         expected = []
 
