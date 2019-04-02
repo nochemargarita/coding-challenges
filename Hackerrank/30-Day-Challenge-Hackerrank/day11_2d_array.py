@@ -2,7 +2,7 @@ arr = []
 for _ in xrange(6):
     print 'enter 6 digits'
     arr.append(map(int, raw_input().rstrip().split()))
-
+# Solution 1:
 max_sum = sum(arr[0][:3]) + arr[1][1] + sum(arr[2][:3])
 for i in xrange(4):
     for j in xrange(4):
@@ -12,6 +12,20 @@ for i in xrange(4):
         total = top + mid + bottom
         if total > max_sum:
             max_sum = total
+print max_sum
+# Solution 2:
+result = []
+for i in xrange(4):
+    for j in xrange(4):
+        top = sum(arr[i][j:j+3])
+        mid = arr[i+1][j+1]
+        bottom = sum(arr[i+2][j:j+3])
+        total = top + mid + bottom
+
+        result.append(total)
+
+print max(result)
+
 
 # for testting
 # Sample Input 1:
